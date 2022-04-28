@@ -80,7 +80,7 @@ describe("Shoud not dispense the beverage : Expect 400 status code", () => {
     done();
   });
   for (const beverage of dispenseBeverage) {
-    it(`Dispense Declined - status code 400 for -> ${beverage.name}`, () => {
+    it(`Dispense Declined and Notified the admin - status code 400 for -> ${beverage.name}`, () => {
       return request.post("/user/dispense").send(beverage).expect(400);
     });
   }
